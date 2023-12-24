@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Study.Core
 {
+    [DisallowMultipleComponent]
     public abstract class SingletonMonoBehaviour<T> : MonoBehaviour where T : SingletonMonoBehaviour<T>
     {
         private static T _instance;
