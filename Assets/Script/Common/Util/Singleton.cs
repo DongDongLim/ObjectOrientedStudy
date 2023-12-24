@@ -2,28 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Singleton<T> where T : class, new()
+namespace Study.Core
 {
-    public static T Instunce
+    public class Singleton<T> where T : class, new()
     {
-        private set { }
-
-        get
+        public static T Instunce
         {
-            if(_instunce == null)
+            private set { }
+
+            get
             {
-                CreateInstance();
+                if (_instunce == null)
+                {
+                    CreateInstance();
+                }
+
+                return _instunce;
             }
-
-            return _instunce;
         }
+
+        private static T _instunce;
+
+        private static void CreateInstance()
+        {
+            _instunce = new T();
+        }
+
     }
-
-    private static T _instunce;
-
-    private static void CreateInstance()
-    {
-        _instunce = new T();
-    }
-
 }
