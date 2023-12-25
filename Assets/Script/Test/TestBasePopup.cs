@@ -4,28 +4,31 @@ using Cysharp.Threading.Tasks;
 
 namespace Study.Test
 {
-    [RequireComponent(typeof(AnimatorAsync))]
     public class TestBasePopup : BasePopup
     {
-        [SerializeField] private AnimatorAsync _animator;
+        [SerializeField] private Animator _animator;
+
+        private AnimatorAsync _animatorAsync;
 
         private readonly string ShowTrigger = "Show";
         private readonly string HideTrigger = "Hide";
 
         private void Awake()
         {
-            _animator = GetComponent<AnimatorAsync>();
+            _animatorAsync = new AnimatorAsync(_animator);
         }
 
         private void OnEnable()
         {
-            _animator.SetTriggerAsync(ShowTrigger).Forget();
+            _animatorAsync.CreateToken();
+            _animatorAsync.SetTriggerAsync(ShowTrigger).Forget();
         }
 
-        protected async override void OnHiden()
+        protected async override void OnHidden()
         {
-            await _animator.SetTriggerAsync(HideTrigger);
-            base.OnHiden();
+            await _animatorAsync.SetTriggerAsync(HideTrigger);
+            _animatorAsync.Dispose();
+            base.OnHidden();
         }
     }
 }

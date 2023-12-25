@@ -367,7 +367,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1265738620}
+      - m_Target: {fileID: 1265738625}
         m_TargetAssemblyTypeName: Study.Core.BasePopup, Common
         m_MethodName: Hide
         m_Mode: 1
@@ -763,8 +763,7 @@ GameObject:
   - component: {fileID: 1265738624}
   - component: {fileID: 1265738623}
   - component: {fileID: 1265738622}
-  - component: {fileID: 1265738621}
-  - component: {fileID: 1265738620}
+  - component: {fileID: 1265738625}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -792,32 +791,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -247.3}
   m_SizeDelta: {x: 600, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1265738620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1265738618}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f449f0cebbdaf40388a5436919ab565c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animator: {fileID: 0}
---- !u!114 &1265738621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1265738618}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1314021e0f5f54cca8513cab696ce014, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animator: {fileID: 1265738622}
 --- !u!95 &1265738622
 Animator:
   serializedVersion: 5
@@ -877,6 +850,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1265738618}
   m_CullTransparentMesh: 1
+--- !u!114 &1265738625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265738618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f449f0cebbdaf40388a5436919ab565c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 1265738622}
 --- !u!1 &1680549532
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,7 +947,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1265738620}
+      - m_Target: {fileID: 1265738625}
         m_TargetAssemblyTypeName: Study.Core.BasePopup, Common
         m_MethodName: Show
         m_Mode: 1

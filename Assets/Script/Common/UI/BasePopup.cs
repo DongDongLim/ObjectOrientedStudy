@@ -2,17 +2,34 @@ using UnityEngine;
 
 namespace Study.Core
 {
-    [RequireComponent(typeof(AnimatorAsync))]
     public abstract class BasePopup : MonoBehaviour, IShowableHideable
     {
+        protected enum ePopupState
+        {
+            Showing,
+            Show,
+            Hiding,
+            Hide
+        }
+
+        protected ePopupState State { private set; get; }
+
         public void Show()
         {
+            if (ePopupState.Showing == State)
+                return;
+            State = ePopupState.Showing;
             OnShown();
+            State = ePopupState.Show;
         }
 
         public void Hide()
         {
-            OnHiden();
+            if (ePopupState.Hiding == State)
+                return;
+            State = ePopupState.Hiding;
+            OnHidden();
+            State = ePopupState.Hide;
         }
 
         protected virtual void OnShown()
@@ -20,7 +37,7 @@ namespace Study.Core
             gameObject.SetActive(true);
         }
 
-        protected virtual void OnHiden()
+        protected virtual void OnHidden()
         {
             gameObject.SetActive(false);
         }

@@ -5,39 +5,43 @@ using UnityEngine;
 
 namespace Study.Core
 {
-    [AddComponentMenu("Study/Animator")]
-    public class AnimatorAsync : MonoBehaviour
+    public class AnimatorAsync : IDisposable
     {
-        [SerializeField] private Animator _animator;
+        private readonly Animator _animator;
 
-        public Animator Anim => _animator;
+        private CancellationTokenSource _cancellationTokenSource;
 
-        private CancellationTokenSource _animatorTaskWithMonoBehaviourCancellationTokenSource;
+        private AnimatorAsync() { }
 
-        #region MonoBehaviour
-
-        private void OnEnable()
+        public AnimatorAsync(Animator animator)
         {
-            _animatorTaskWithMonoBehaviourCancellationTokenSource = new CancellationTokenSource();
+            if (null == animator)
+                throw new ArgumentNullException(nameof(Animator), "animator is null");
+            _animator = animator;
         }
 
-        private void OnDisable()
+        public void CreateToken()
         {
-            _animatorTaskWithMonoBehaviourCancellationTokenSource?.Cancel();
-            _animatorTaskWithMonoBehaviourCancellationTokenSource?.Dispose();
-            _animatorTaskWithMonoBehaviourCancellationTokenSource = null;
+            _cancellationTokenSource = new CancellationTokenSource();
         }
-        #endregion
+
+        public void CancelToken()
+        {
+            _cancellationTokenSource?.Cancel();
+        }
+
+        public void Dispose()
+        {
+            _cancellationTokenSource?.Dispose();
+            _cancellationTokenSource = null;
+        }
 
         public async UniTask SetTriggerAsync(string trigger)
         {
             if (_animator == null || _animator.isActiveAndEnabled == false)
                 return;
 
-            if (_animatorTaskWithMonoBehaviourCancellationTokenSource == null)
-                throw new NullReferenceException("Please activate the game object in AnimatorAsync or provide a CancellationToken.");
-
-            await SetTriggerAsync(trigger, _animatorTaskWithMonoBehaviourCancellationTokenSource);
+            await SetTriggerAsync(trigger, _cancellationTokenSource);
         }
 
         public async UniTask SetTriggerAsync(string trigger, CancellationTokenSource cancellationToken)
@@ -56,10 +60,7 @@ namespace Study.Core
             if (_animator == null || _animator.isActiveAndEnabled == false)
                 return;
 
-            if (_animatorTaskWithMonoBehaviourCancellationTokenSource == null)
-                throw new NullReferenceException("Please activate the game object in AnimatorAsync or provide a CancellationToken.");
-
-            await SetTriggerAsync(id, _animatorTaskWithMonoBehaviourCancellationTokenSource);
+            await SetTriggerAsync(id, _cancellationTokenSource);
         }
 
         public async UniTask SetTriggerAsync(int id, CancellationTokenSource cancellationToken)
