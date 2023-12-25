@@ -1,5 +1,5 @@
 using UnityEngine;
-using Study.Core;
+using Study.Common.Core;
 using Cysharp.Threading.Tasks;
 
 namespace Study.Test

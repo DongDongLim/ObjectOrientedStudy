@@ -1,5 +1,5 @@
 
-namespace Study.Core
+namespace Study.Common.Core
 {
     public interface IShowableHideable
     {

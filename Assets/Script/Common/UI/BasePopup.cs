@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Study.Core
+namespace Study.Common.Core
 {
     public abstract class BasePopup : MonoBehaviour, IShowableHideable
     {

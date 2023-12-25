@@ -2,7 +2,7 @@ using System;
 using UniRx;
 
 
-namespace Study.Core
+namespace Study.Common.Core
 {
     public class ApplicationManager : SingletonMonoBehaviour<ApplicationManager>
     {
