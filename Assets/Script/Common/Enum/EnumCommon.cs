@@ -4,5 +4,7 @@ namespace Study.Common.Enum
     {
         LoadingStart,
         LoadingComplate,
+        UnLoadingStart,
+        UnLoadingComplate,
     }
 }

@@ -39,9 +39,9 @@ namespace Study.Common.Core
             if (true == _sceneLoader.IsUnLoadingScene(sceneName))
                 return;
 
-            _sceneUnLoadSubject.OnNext(new KeyValuePair<eSceneState, string>(eSceneState.LoadingStart, sceneName));
+            _sceneUnLoadSubject.OnNext(new KeyValuePair<eSceneState, string>(eSceneState.UnLoadingStart, sceneName));
             await SceneManager.UnloadSceneAsync(sceneName);
-            _sceneUnLoadSubject.OnNext(new KeyValuePair<eSceneState, string>(eSceneState.LoadingComplate, sceneName));
+            _sceneUnLoadSubject.OnNext(new KeyValuePair<eSceneState, string>(eSceneState.UnLoadingComplate, sceneName));
         }
     }
 
