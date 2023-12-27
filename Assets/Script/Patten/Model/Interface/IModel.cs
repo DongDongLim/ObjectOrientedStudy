@@ -1,4 +1,4 @@
-using Study.Patten.Common;
+using Study.Patten.Generic;
 using System;
 
 namespace Study.Patten.Model

@@ -1,4 +1,4 @@
-namespace Study.Patten.Common
+namespace Study.Patten.Generic
 {
     public interface IData
     {

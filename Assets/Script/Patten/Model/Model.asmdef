@@ -1,0 +1,21 @@
+{
+    "name": "Model",
+    "rootNamespace": "",
+    "references": [
+        "GUID:023fdadcc8d2b4a9ebae2ab65a73937f"
+    ],
+    "includePlatforms": [
+        "Android",
+        "Editor",
+        "iOS",
+        "macOSStandalone"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

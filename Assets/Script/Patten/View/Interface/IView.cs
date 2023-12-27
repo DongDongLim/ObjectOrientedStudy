@@ -1,5 +1,5 @@
 using System;
-using Study.Patten.Common;
+using Study.Patten.Generic;
 
 namespace Study.Patten.View
 {
