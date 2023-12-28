@@ -2,6 +2,7 @@
     "name": "Presenter",
     "rootNamespace": "",
     "references": [
+        "GUID:023fdadcc8d2b4a9ebae2ab65a73937f",
         "GUID:c789f341f2daf4d35b7a71a71620f877",
         "GUID:70cf3d9845af24251b84fd08ef07ed6c",
         "GUID:560b04d1a97f54a4e82edc0cbbb69285",

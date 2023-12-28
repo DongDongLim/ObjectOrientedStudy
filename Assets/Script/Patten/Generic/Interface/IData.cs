@@ -4,6 +4,6 @@ namespace Study.Patten.Generic
     {
         public void Update(IData data);
 
-        public T GetData<T>() where T : IData;
+        public T GetData<T>() where T : class, IData;
     }
 }

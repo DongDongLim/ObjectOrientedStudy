@@ -1,9 +1,16 @@
 {
-    "name": "View",
+    "name": "Scene.Presenter",
     "rootNamespace": "",
     "references": [
+        "GUID:fd4faff002b7d4dc6bb5e284bd8252d4",
+        "GUID:bf46d14ab9a9c4ec5b9a055afcd753a3",
+        "GUID:bd91e8c3bb19c4bb1a1b2e0f148c58cb",
+        "GUID:c789f341f2daf4d35b7a71a71620f877",
+        "GUID:70cf3d9845af24251b84fd08ef07ed6c",
+        "GUID:c2e168589ca0743a09e22658617ac7b2",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
         "GUID:023fdadcc8d2b4a9ebae2ab65a73937f",
-        "GUID:1a5c4c6e0a8d34a25baace09eefe73dd"
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285"
     ],
     "includePlatforms": [
         "Android",

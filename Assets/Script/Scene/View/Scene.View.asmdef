@@ -1,9 +1,12 @@
 {
-    "name": "View",
+    "name": "Scene.View",
     "rootNamespace": "",
     "references": [
+        "GUID:70cf3d9845af24251b84fd08ef07ed6c",
         "GUID:023fdadcc8d2b4a9ebae2ab65a73937f",
-        "GUID:1a5c4c6e0a8d34a25baace09eefe73dd"
+        "GUID:c2e168589ca0743a09e22658617ac7b2",
+        "GUID:029c1c1b674aaae47a6841a0b89ad80e",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23"
     ],
     "includePlatforms": [
         "Android",

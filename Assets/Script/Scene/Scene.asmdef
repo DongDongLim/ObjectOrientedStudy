@@ -1,7 +1,9 @@
 {
-    "name": "View",
+    "name": "Scene",
     "rootNamespace": "",
     "references": [
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
         "GUID:023fdadcc8d2b4a9ebae2ab65a73937f",
         "GUID:1a5c4c6e0a8d34a25baace09eefe73dd"
     ],
